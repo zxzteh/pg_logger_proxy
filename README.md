@@ -34,15 +34,17 @@ For bench script
 ./pg_bench.sh <mode>
 ```
 
-where modes: 
-ls -> light single:  TABLES=4  TABLE_SIZE=100     THREADS=4   EVENTS=1000
-hs -> heavy single:  TABLES=8  TABLE_SIZE=500000  THREADS=256 EVENTS=50000
-lt -> light torture: TABLES=4  TABLE_SIZE=200000  THREADS=64  TIME=300
-lt -> heavy torture: TABLES=16 TABLE_SIZE=1000000 THREADS=256 TIME=600
+| Mode   | Description   | TABLES | TABLE_SIZE | THREADS | EVENTS | TIME (s) |
+| ------ | ------------- | ------ | ---------- | ------- | ------ | -------- |
+| **ls** | light single  | 4      | 100        | 4       | 1000   | —        |
+| **hs** | heavy single  | 8      | 500000     | 256     | 50000  | —        |
+| **lt** | light torture | 4      | 200000     | 64      | —      | 300      |
+| **ht** | heavy torture | 16     | 1000000    | 256     | —      | 600      |
+
 
 For leak test with default parameters. Don't forget to load proxy during this run.
 ```bash
-./leak_test.sh <mode>
+./leak_test.sh
 ```
 
 ## Logging 
