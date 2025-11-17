@@ -27,12 +27,10 @@ clean:
 	rm -rf $(BUILD_DIR) $(TARGET)
 
 
-#  Leak test
+#  Leak test with injected runtime
 leak: CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
 leak: LDFLAGS  += -fsanitize=address -fno-omit-frame-pointer
 leak:
 	$(MAKE) clean
 	$(MAKE) all
 
-
-#  sudo valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes --num-callers=20 --log-file=valgrind.log ./pg_proxy 127.0.0.1 5432 192.168.31.2 5432

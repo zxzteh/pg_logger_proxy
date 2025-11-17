@@ -6,7 +6,7 @@ set -euo pipefail
 
 # Parameters
 
-PG_HOST="127.0.0.1"
+PG_HOST="192.168.31.2"
 PG_PORT="5432"
 PG_USER="sbtest"
 PG_PASS="sbpass"  #  Not safe, but it's local server
@@ -144,7 +144,7 @@ case "$MODE" in
   hs)
     TABLES=8
     TABLE_SIZE=500000
-    THREADS=128
+    THREADS=256
     TIME=0
     EVENTS=50000
     ;;
@@ -152,7 +152,7 @@ case "$MODE" in
   lt)
     TABLES=4
     TABLE_SIZE=200000
-    THREADS=8
+    THREADS=64
     TIME=300
     EVENTS=0
     ;;
@@ -160,7 +160,7 @@ case "$MODE" in
   ht)
     TABLES=16
     TABLE_SIZE=1000000
-    THREADS=128
+    THREADS=256
     TIME=600
     EVENTS=0
     ;;
