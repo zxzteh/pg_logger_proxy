@@ -21,32 +21,32 @@ Compile using:
 
 ```bash
 make
-
+```
 
 ## Usage
+```bash
 ./pg_proxy <listen_host> <listen_port> <db_host> <db_port>
-
+```
 
 ## Logging 
+
+Rotation logging is used. Max files by default = 10. Max size of file = 4 Mb
 
 query-1.log
 query-2.log
 query-3.log
 ...
-
+![Log Rotation](img/logs_rotation.gif)
 
 ## Benchmark & Diagnostics
 
-### 🔹 Query Log Rotation Demo
-![Log Rotation](img/logs_rotation.gif)
-
-### 🔹 Memory Leak Test (Valgrind)
+### Memory Leak Test (Valgrind)
 ![Leak Test](img/leak_test.png)
 
-### 🔹 Proxy Benchmark Result
+### Proxy Benchmark Result
 ![Proxy Benchmark](img/bench_stat_proxy.png)
 
-### 🔹 Direct Database Benchmark Result
+### Direct Database Benchmark Result
 ![Direct Benchmark](img/bench_stat_direct.png)
 
 ### Proxy vs Direct PostgreSQL Benchmark (256 threads)
